@@ -14,7 +14,7 @@ data = {
 
 headers = {
 "Content-Type": "application/json" ,
-"Authorization": #your code#,
+"Authorization": #code#,
 }
 
 response = requests.post('https://api.openai.com/v1/chat/completions',
