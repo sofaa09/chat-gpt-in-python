@@ -1,10 +1,10 @@
 import requests
 
-user_input = input('Введите сообщение: ')
+user_input = input('message: ')
 
 while len(user_input) < 10:
-    print('Ваше сообщение должно содержать не менее 10 символов.')
-    user_input = input('Введите сообщение: ')
+    print('your message must contain at least 10 characters')
+    user_input = input('message: ')
 
 data = {
      "model": "gpt-3.5-turbo",
@@ -20,4 +20,6 @@ headers = {
 response = requests.post('https://api.openai.com/v1/chat/completions',
 headers=headers, json=data)
 
-print(response.json())
+response_json = response.json()
+
+print(response_json['choices'][0]['message']['content'])
